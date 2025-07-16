@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Issue Certificate</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff;
+    }
+
+    /* Dashboard Bar */
+    .dashboard {
+      background-color: #9b30ff;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .dashboard h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .profile-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .profile-icon svg {
+      width: 24px;
+      height: 24px;
+      fill: #9b30ff;
+    }
+
+    /* Form Container */
+    .container {
+      background-color: #f3e8ff;
+      padding: 30px 40px;
+      border-radius: 10px;
+      max-width: 600px;
+      width: 90%;
+      margin: 40px auto;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #000;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #000;
+    }
+
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 15px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      background-color: black;
+      color: white;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      float: right;
+      margin-top: 15px;
+    }
+
+    button:hover {
+      background-color: #333;
+    }
+
+    @media (max-width: 500px) {
+      .container {
+        padding: 20px;
+      }
+
+      button {
+        width: 100%;
+        float: none;
+      }
+
+      .dashboard {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .profile-icon {
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Dashboard -->
+  <div class="dashboard">
+    <h1>Issue certificate</h1>
+    <div class="profile-icon">
+      <!-- Default user SVG -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2V19.2c0-3.2-6.4-4.8-9.6-4.8z"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Form Section -->
+  <div class="container">
+    <h2>Issue Certificate</h2>
+    <form>
+      <label for="intern">Intern Name:</label>
+      <input type="text" id="intern" name="intern" />
+
+      <label for="mentor">Mentor's Name:</label>
+      <input type="text" id="mentor" name="mentor" />
+
+      <label for="task">Task Title:</label>
+      <input type="text" id="task" name="task" />
+
+      <label for="desc">Description:</label>
+      <textarea id="desc" name="desc" rows="4"></textarea>
+
+      <button type="submit">Generate Certificate</button>
+    </form>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Internship Report</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color:#ffffff;
+      color: #1e1e2f;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Full-width Dashboard Header */
+    .dashboard-header {
+      width: 100%;
+      background-color: #9b30ff;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .dashboard-title {
+      font-size: 1.4em;
+      font-weight: bold;
+    }
+
+    .profile-icon {
+      width: 40px;
+      height: 40px;
+      background-color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #9b30ff;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    .main-content {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .report-container {
+      background: #f3e8ff;
+      border-radius: 12px;
+      padding: 30px;
+      max-width: 700px;
+      width: 100%;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+      z-index: 1;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 10px;
+      color: #1e1e2f;
+    }
+
+    .subtitle {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 1em;
+      color: #333;
+    }
+
+    .section-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #1e1e2f;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 10px 20px;
+      font-size: 1em;
+      color: #1e1e2f;
+    }
+
+    .info-grid .label {
+      font-weight: bold;
+    }
+
+    .remarks {
+      margin-top: 15px;
+      grid-column: span 2;
+    }
+
+    .download-btn {
+      margin-top: 25px;
+      text-align: right;
+    }
+
+    .download-btn button {
+      background-color: #9b30ff;
+      color: white;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 20px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    .download-btn button:hover {
+      background-color: #822de0;
+    }
+
+    @media (max-width: 600px) {
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .remarks {
+        grid-column: span 1;
+      }
+
+      .download-btn {
+        text-align: center;
+      }
+
+      .dashboard-header {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .dashboard-title {
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Full-Screen Dashboard Header with Title and Profile Icon -->
+  <div class="dashboard-header">
+    <div class="dashboard-title">Internship Report</div>
+    <div class="profile-icon">👤</div>
+  </div>
+
+  <!-- Centered Report Content -->
+  <div class="main-content">
+    <div class="report-container">
+      <h1>Internship Report</h1>
+      <div class="subtitle">Generated report of all intern activity</div>
+
+      <div class="section-title">Intern Details & Performance Metrics</div>
+      <div class="info-grid">
+        <div class="label">Intern Name</div><div>: Ram</div>
+        <div class="label">Intern ID</div><div>: INT2025_004</div>
+        <div class="label">Department</div><div>: Structural Design</div>
+        <div class="label">Start Date</div><div>: May 01, 2025</div>
+        <div class="label">End Date</div><div>: June 01, 2025</div>
+        <div class="label">Total Hours</div><div>: 160 hrs</div>
+        <div class="label">Performance Graded</div><div>: A</div>
+        <div class="remarks"><strong>Remarks</strong>: Consistently met expectations and submitted task on time.</div>
+      </div>
+
+      <div class="download-btn">
+        <button>Download</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

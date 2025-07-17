@@ -1,10 +1,12 @@
-# growtern/urls.py
-
 from django.urls import path
-from . import views  # Make sure you have at least one view
+from . import views
 
 urlpatterns = [
-    path('', views.home, name='home'),  # Replace `home` with your actual view function
+    path('', views.intern_list, name='home'),
+    path('interns/', views.intern_list, name='intern_list'),
+    path('add/', views.add_intern, name='add_intern'),
+    path('edit/', views.edit_intern, name='edit_intern'),
+    path('assign_mentor/', views.assign_mentor, name='assign_mentor'),
 ]
 from django.urls import path
 from . import views

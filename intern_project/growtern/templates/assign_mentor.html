@@ -58,18 +58,21 @@
 <body>
 
 <!-- Navbar -->
+{% load static %}
+
 <nav class="navbar navbar-expand-lg">
   <div class="container-fluid px-4">
     <a class="navbar-brand" href="#">Growtern</a>
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="intern_list.html">Interns</a></li>
-        <li class="nav-item"><a class="nav-link" href="add_intern.html">Add Intern</a></li>
-        <li class="nav-item"><a class="nav-link" href="assign_mentor.html">Assign Mentor</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'intern_list' %}">Interns</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'add_intern' %}">Add Intern</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'assign_mentor' %}">Assign Mentor</a></li>
       </ul>
     </div>
   </div>
 </nav>
+
 
 <!-- Form Card -->
 <div class="container">

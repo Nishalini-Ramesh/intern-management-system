@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Task Lists</title>
+  <title>Task Lists - Desktop</title>
   <style>
     body {
       margin: 0;
@@ -88,6 +89,10 @@
       margin-bottom: 20px;
     }
 
+    .task-item:last-child {
+      margin-bottom: 60px; /* Space for floating button */
+    }
+
     .task-item input[type="text"] {
       flex-grow: 1;
       padding: 10px 12px;
@@ -131,17 +136,23 @@
 
     <div class="task-box">
       <h2>TASKS</h2>
-      <div id="task-list">
-        {% for task in tasks %}
-          <div class="task-item">
-            <input type="text" value="{{ forloop.counter }}. {{ task.title }}" readonly />
-            <input type="checkbox" {% if task.completed %}checked{% endif %} />
-          </div>
-        {% empty %}
-          <p>No tasks yet.</p>
-        {% endfor %}
+      <div class="task-item">
+        <input type="text" value="1. To draw the ULM ....." readonly />
+        <input type="checkbox" />
       </div>
-      <div class="add-button" onclick="window.location.href='{% url 'create_task' %}'">+</div>
+      <div class="task-item">
+        <input type="text" value="2. To do the database..." readonly />
+        <input type="checkbox" />
+      </div>
+      <div class="task-item">
+        <input type="text" value="3. get approval for sch..." readonly />
+        <input type="checkbox" />
+      </div>
+      <div class="task-item">
+        <input type="text" value="4. ui model..." />
+        <input type="checkbox" />
+      </div>
+      <div class="add-button">+</div>
     </div>
   </div>
 </body>

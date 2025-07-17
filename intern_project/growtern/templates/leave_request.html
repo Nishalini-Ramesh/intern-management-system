@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Leave Request</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      font-family: 'Nunito', sans-serif;
+      background-image: url('images/bg-purple.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .form-container {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      width: 90%;
+      max-width: 450px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #6b21a8;
+      margin-bottom: 1.5rem;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 1rem;
+    }
+
+    textarea {
+      height: 100px;
+      resize: none;
+    }
+
+    button {
+      background-color: #9333ea;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #7e22ce;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Request Leave</h2>
+    <form onsubmit="saveLeaveRequest(event)">
+  <input type="text" id="name" placeholder="Your Name" required />
+  <select id="role" required>
+    <option value="" disabled selected>Select Role</option>
+    <option>Intern</option>
+    <option>Mentor</option>
+    <option>Admin</option>
+  </select>
+  <input type="date" id="from_date" required />
+  <input type="date" id="to_date" required />
+  <textarea id="reason" placeholder="Reason for leave" required></textarea>
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+  function saveLeaveRequest(event) {
+    event.preventDefault();
+
+    const data = {
+      name: document.getElementById('name').value,
+      role: document.getElementById('role').value,
+      from_date: document.getElementById('from_date').value,
+      to_date: document.getElementById('to_date').value,
+      reason: document.getElementById('reason').value,
+      status: 'Pending'
+    };
+
+    localStorage.setItem('leave_request', JSON.stringify(data));
+    window.location.href = 'leave_status.html';
+  }
+</script>
+
+  </div>
+</body>
+</html>

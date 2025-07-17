@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Leave Summary</title>
+  <style>
+    body {
+      font-family: 'Nunito', sans-serif;
+      background-image: url('images/bg-purple.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .summary-box {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 2rem;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 450px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h2 {
+      color: #6b21a8;
+      margin-bottom: 1rem;
+    }
+
+    .details {
+      text-align: left;
+      font-size: 1rem;
+      color: #4c1d95;
+      margin-bottom: 1rem;
+    }
+
+    .details p {
+      margin: 8px 0;
+    }
+
+    .status-badge {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: bold;
+      color: white;
+      background-color: #fbbf24;
+    }
+
+    .approved {
+      background-color: #22c55e;
+    }
+
+    .rejected {
+      background-color: #ef4444;
+    }
+
+    .pending {
+      background-color: #fbbf24;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 1.5rem;
+      color: #9333ea;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="summary-box">
+    <h2>Leave Request Summary</h2>
+    <div class="details" id="leaveDetails"></div>
+    <div id="statusTag" class="status-badge">Status</div>
+    <br>
+    <a href="leave_request.html">← Back to Leave Request</a>
+  </div>
+
+  <script>
+    const data = JSON.parse(localStorage.getItem('leave_request'));
+    const leaveDetails = document.getElementById('leaveDetails');
+    const statusTag = document.getElementById('statusTag');
+
+    if (data) {
+      leaveDetails.innerHTML = `
+        <p><strong>Name:</strong> ${data.name}</p>
+        <p><strong>Role:</strong> ${data.role}</p>
+        <p><strong>From:</strong> ${data.from_date}</p>
+        <p><strong>To:</strong> ${data.to_date}</p>
+        <p><strong>Reason:</strong> ${data.reason}</p>
+      `;
+
+      statusTag.textContent = data.status;
+
+      if (data.status === 'Approved') {
+        statusTag.classList.add('approved');
+      } else if (data.status === 'Rejected') {
+        statusTag.classList.add('rejected');
+      } else {
+        statusTag.classList.add('pending');
+      }
+    } else {
+      leaveDetails.innerHTML = `<p>No leave request found.</p>`;
+      statusTag.style.display = 'none';
+    }
+  </script>
+</body>
+</html>

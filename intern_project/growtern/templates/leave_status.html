@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Leave Status</title>
+  <style>
+    body {
+      font-family: 'Nunito', sans-serif;
+      background-image: url('images/bg-purple.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .status-box {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 2rem;
+      border-radius: 20px;
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #6b21a8;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: #4c1d95;
+      font-weight: bold;
+      margin: 1rem 0;
+    }
+
+    .status-tag {
+      display: inline-block;
+      background-color: #facc15;
+      color: #6b21a8;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    button {
+      background-color: #9333ea;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    button:hover {
+      background-color: #7e22ce;
+    }
+  </style>
+</head>
+<body>
+  <div class="status-box">
+  <h2>Leave Request Submitted!</h2>
+  <div id="leaveDetails"></div>
+  <div id="statusBadge" class="status-tag">Pending</div>
+  <button onclick="window.location.href='leave_approval.html'">Go to Approval Page</button>
+</div>
+
+<script>
+  const data = JSON.parse(localStorage.getItem('leave_request'));
+  const leaveDetails = document.getElementById('leaveDetails');
+  const statusBadge = document.getElementById('statusBadge');
+
+  if (data) {
+    leaveDetails.innerHTML = `
+      <p><strong>Name:</strong> ${data.name}</p>
+      <p><strong>Role:</strong> ${data.role}</p>
+      <p><strong>From:</strong> ${data.from_date}</p>
+      <p><strong>To:</strong> ${data.to_date}</p>
+      <p><strong>Reason:</strong> ${data.reason}</p>
+    `;
+    statusBadge.textContent = data.status;
+  }
+</script>
+
+</body>
+</html>

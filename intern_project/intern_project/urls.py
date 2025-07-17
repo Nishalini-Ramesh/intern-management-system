@@ -22,3 +22,13 @@ urlpatterns = [
     path('', include('growtern.urls')),  # ← this should point to your current app
 ]
 
+from django.contrib import admin
+from django.urls import path, include
+
+
+
+# intern_project/urls.py
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('growtern.urls')),  # now '/' will point to growtern
+]

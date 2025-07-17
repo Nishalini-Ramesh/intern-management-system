@@ -9,10 +9,35 @@
       background-size: cover;
       background-position: center;
       min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       margin: 0;
+    }
+
+    /* Navbar styles */
+    .navbar {
+      background-color: #a855f7;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar .logo {
+      color: white;
+      font-weight: bold;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+    }
+
+    .navbar .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+
+    .navbar .nav-links a:hover {
+      text-decoration: underline;
     }
 
     .container {
@@ -23,6 +48,7 @@
       max-width: 450px;
       width: 90%;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin: 50px auto;
     }
 
     h2 {
@@ -57,11 +83,27 @@
   </style>
 </head>
 <body>
+
+  <!-- 🔸 Navbar Section -->
+  <div class="navbar">
+    <div class="logo">GROWTERN</div>
+    <div class="nav-links">
+      <a href="login.html">Login</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="tasks.html">Tasks</a>
+      <a href="leave_requests.html">Leave</a>
+      <a href="feedback.html">Feedback</a>
+      <a href="certificate.html">Certificate</a>
+    </div>
+  </div>
+
+  <!-- 🔸 Thank You Container -->
   <div class="container">
     <h2>🎉 Thank You!</h2>
     <img src="../images/astronaut.png" alt="Astronaut" class="astronaut">
     <p>Your feedback has been submitted successfully.</p>
     <a href="index.html">← Back to Feedback</a>
   </div>
+
 </body>
 </html>

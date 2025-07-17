@@ -11,12 +11,38 @@
       background-position: center;
       background-repeat: no-repeat;
       min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       margin: 0;
     }
 
+    /* Navbar */
+    .navbar {
+      background-color: #a855f7;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar .logo {
+      color: white;
+      font-weight: bold;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+    }
+
+    .navbar .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+
+    .navbar .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Form Container */
     .form-container {
       background-color: rgba(255, 255, 255, 0.95);
       padding: 2rem;
@@ -25,6 +51,7 @@
       width: 90%;
       max-width: 450px;
       text-align: center;
+      margin: 2rem auto;
     }
 
     h2 {
@@ -64,6 +91,21 @@
   </style>
 </head>
 <body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo">GROWTERN</div>
+    <div class="nav-links">
+      <a href="login.html">Login</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="tasks.html">Tasks</a>
+      <a href="leave_requests.html">Leave</a>
+      <a href="feedback.html">Feedback</a>
+      <a href="certificate.html">Certificate</a>
+    </div>
+  </div>
+
+  <!-- Feedback Form -->
   <div class="form-container">
     <h2>Submit Feedback</h2>
     <form onsubmit="event.preventDefault(); window.location.href='rating.html';">
@@ -82,5 +124,6 @@
       <button type="submit">Submit</button>
     </form>
   </div>
+
 </body>
 </html>

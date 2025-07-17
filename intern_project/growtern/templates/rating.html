@@ -9,10 +9,34 @@
       background-size: cover;
       background-position: center;
       min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       margin: 0;
+    }
+
+    .navbar {
+      background-color: #a855f7;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar .logo {
+      color: white;
+      font-weight: bold;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+    }
+
+    .navbar .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+
+    .navbar .nav-links a:hover {
+      text-decoration: underline;
     }
 
     .container {
@@ -23,6 +47,7 @@
       width: 90%;
       max-width: 400px;
       box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      margin: 3rem auto;
     }
 
     h2 {
@@ -72,6 +97,22 @@
   </style>
 </head>
 <body>
+
+  <!-- Navbar Start -->
+  <div class="navbar">
+    <div class="logo">GROWTERN</div>
+    <div class="nav-links">
+      <a href="login.html">Login</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="tasks.html">Tasks</a>
+      <a href="leave_requests.html">Leave</a>
+      <a href="feedback.html">Feedback</a>
+      <a href="certificate.html">Certificate</a>
+    </div>
+  </div>
+  <!-- Navbar End -->
+
+  <!-- Feedback Form -->
   <div class="container">
     <a href="index.html">← Back</a>
     <h2>Rate Us</h2>
@@ -90,6 +131,7 @@
     </form>
   </div>
 
+  <!-- Star rating JS -->
   <script>
     const stars = document.querySelectorAll('.star');
     const ratingInput = document.getElementById('ratingInput');
